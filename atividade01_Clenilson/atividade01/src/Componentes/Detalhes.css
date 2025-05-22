@@ -1,0 +1,11 @@
+.detalhes {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .detalhes img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
