@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Tarefa.css"; // ← importe o CSS
+import "./Tarefa.css";
 
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
@@ -9,7 +9,7 @@ export default function App() {
   function adicionarTarefa(e) {
     e.preventDefault();
     if (texto.trim() === "") return;
-    if (tarefas.some(tarefa => tarefa.texto === texto)) {
+    if (tarefas.some((tarefa) => tarefa.texto === texto)) {
       alert("Tarefa já existe!");
       return;
     }
@@ -42,10 +42,12 @@ export default function App() {
     if (status === "não realizada") return "red";
     return "orange";
   }
-  function aplyFillter(valor) {
+
+  function applyFilter(valor) {
     setFiltro(valor);
   }
-  const tarefasFiltradas = tarefas.filter(tarefa => {
+
+  const tarefasFiltradas = tarefas.filter((tarefa) => {
     if (filtro === "todos") return true;
     return tarefa.status === filtro;
   });
@@ -63,21 +65,22 @@ export default function App() {
         <button type="submit" className="button">
           Adicionar
         </button>
-        <button
-          type="button"
-          onClick={resetar}
-          className="button button-red"
-        >
+        <button type="button" onClick={resetar} className="button button-red">
           Resetar
         </button>
-        <label>Filtros</label>
-        <select onChange={(e) => aplyFillter(e.target.value)} style={styles.input}>
+        <label className="label">Filtros</label>
+        <select onChange={(e) => applyFilter(e.target.value)} className="input">
           <option value="todos">Todos</option>
           <option value="pendente">Pendentes</option>
           <option value="realizada">Realizadas</option>
           <option value="não realizada">Não Realizadas</option>
         </select>
       </form>
+
+      <ul className="lista">
+        {tarefasFiltradas.map((tarefa, index) => (
+          <li key={index} className="item">
+            <span className="texto" style={{ color: getStatusColor(tarefa.status) }}>
               {tarefa.texto} ({tarefa.status})
             </span>
             <div className="botoes">
