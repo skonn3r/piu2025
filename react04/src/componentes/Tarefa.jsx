@@ -3,10 +3,15 @@ import React, { useState } from "react";
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
   const [texto, setTexto] = useState("");
+  const [filtro, setFiltro] = useState("todos");
 
   function adicionarTarefa(e) {
     e.preventDefault();
     if (texto.trim() === "") return;
+    if (tarefas.some(tarefa => tarefa.texto === texto)) {
+      alert("Tarefa já existe!");
+      return;
+    }
 
     const nova = { texto, status: "pendente" };
     setTarefas([...tarefas, nova]);
@@ -31,6 +36,19 @@ export default function App() {
     setTarefas([]);
   }
 
+  function getStatusColor(status) {
+    if (status === "realizada") return "green";
+    if (status === "não realizada") return "red";
+    return "orange";
+  }
+  function aplyFillter(valor) {
+    setFiltro(valor);
+  }
+  const tarefasFiltradas = tarefas.filter(tarefa => {
+    if (filtro === "todos") return true;
+    return tarefa.status === filtro;
+  });
+
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>📝 Lista de Tarefas</h2>
@@ -47,10 +65,17 @@ export default function App() {
         <button type="button" onClick={resetar} style={{ ...styles.button, backgroundColor: "#e74c3c" }}>
           Resetar
         </button>
+        <label>Filtros</label>
+        <select onChange={(e) => aplyFillter(e.target.value)} style={styles.input}>
+          <option value="todos">Todos</option>
+          <option value="pendente">Pendentes</option>
+          <option value="realizada">Realizadas</option>
+          <option value="não realizada">Não Realizadas</option>
+        </select>
       </form>
 
       <ul style={styles.lista}>
-        {tarefas.map((tarefa, index) => (
+        {tarefasFiltradas.map((tarefa, index) => (
           <li key={index} style={styles.item}>
             <span style={{ ...styles.texto, color: getStatusColor(tarefa.status) }}>
               {tarefa.texto} ({tarefa.status})
@@ -79,11 +104,6 @@ export default function App() {
   );
 }
 
-function getStatusColor(status) {
-  if (status === "realizada") return "green";
-  if (status === "não realizada") return "red";
-  return "orange";
-}
 
 const styles = {
   container: {
