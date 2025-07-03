@@ -1,0 +1,94 @@
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fffbf7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background: white;
+    color: black;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button-red {
+    background-color: #e74c3c;
+  }
+  
+  .lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item {
+    background-color: rgb(250, 242, 229);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .texto {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .botoes {
+    margin-bottom: 0px;
+    display: flex;
+    gap: 8px;
+    background-color: rgb(250, 242, 229);
+  }
+  
+  .btn-realizado {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: green;
+    cursor: pointer;
+  }
+  
+  .btn-nao-realizado {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e74c3c;
+    cursor: pointer;
+  }
+
+  .btn-pendente {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(211, 112, 0);
+    cursor: pointer;
+  }
