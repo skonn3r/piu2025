@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Tarefa.css"; // ← importe o CSS
 
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
@@ -50,19 +51,23 @@ export default function App() {
   });
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>📝 Lista de Tarefas</h2>
-      <form onSubmit={adicionarTarefa} style={styles.form}>
+    <div className="container">
+      <h2 className="title">📝 Lista de Tarefas</h2>
+      <form onSubmit={adicionarTarefa} className="form">
         <input
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
           placeholder="Nova tarefa"
-          style={styles.input}
+          className="input"
         />
-        <button type="submit" style={styles.button}>
+        <button type="submit" className="button">
           Adicionar
         </button>
-        <button type="button" onClick={resetar} style={{ ...styles.button, backgroundColor: "#e74c3c" }}>
+        <button
+          type="button"
+          onClick={resetar}
+          className="button button-red"
+        >
           Resetar
         </button>
         <label>Filtros</label>
@@ -73,27 +78,22 @@ export default function App() {
           <option value="não realizada">Não Realizadas</option>
         </select>
       </form>
-
-      <ul style={styles.lista}>
-        {tarefasFiltradas.map((tarefa, index) => (
-          <li key={index} style={styles.item}>
-            <span style={{ ...styles.texto, color: getStatusColor(tarefa.status) }}>
               {tarefa.texto} ({tarefa.status})
             </span>
-            <div style={styles.botoes}>
-              <button onClick={() => mudarStatus(index, "realizada")} style={styles.smallButton}>
+            <div className="botoes">
+              <button onClick={() => mudarStatus(index, "realizada")} className="btn-realizado">
                 Realizada
               </button>
-              <button onClick={() => mudarStatus(index, "não realizada")} style={styles.smallButton}>
+              <button onClick={() => mudarStatus(index, "não realizada")} className="btn-nao-realizado">
                 Não Realizada
               </button>
-              <button onClick={() => mudarStatus(index, "pendente")} style={styles.smallButton}>
+              <button onClick={() => mudarStatus(index, "pendente")} className="btn-pendente">
                 Pendente
               </button>
-              <button onClick={() => mover(index, -1)} style={styles.smallButton}>
+              <button onClick={() => mover(index, -1)} className="btn-up">
                 ↑
               </button>
-              <button onClick={() => mover(index, 1)} style={styles.smallButton}>
+              <button onClick={() => mover(index, 1)} className="btn-down">
                 ↓
               </button>
             </div>
@@ -103,69 +103,3 @@ export default function App() {
     </div>
   );
 }
-
-
-const styles = {
-  container: {
-    maxWidth: "600px",
-    margin: "30px auto",
-    padding: "20px",
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#f9f9f9",
-    borderRadius: "8px",
-    boxShadow: "0 0 10px rgba(0,0,0,0.1)"
-  },
-  title: {
-    textAlign: "center",
-    marginBottom: "20px"
-  },
-  form: {
-    display: "flex",
-    gap: "10px",
-    marginBottom: "20px",
-    flexWrap: "wrap"
-  },
-  input: {
-    flex: "1",
-    padding: "10px",
-    fontSize: "16px"
-  },
-  button: {
-    padding: "10px 15px",
-    backgroundColor: "#3498db",
-    color: "white",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer"
-  },
-  lista: {
-    listStyle: "none",
-    padding: 0
-  },
-  item: {
-    backgroundColor: "white",
-    padding: "15px",
-    borderRadius: "5px",
-    marginBottom: "10px",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
-  },
-  texto: {
-    fontSize: "16px",
-    fontWeight: "bold"
-  },
-  botoes: {
-    marginTop: "10px",
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "8px"
-  },
-  smallButton: {
-    padding: "5px 10px",
-    fontSize: "14px",
-    border: "none",
-    borderRadius: "4px",
-    backgroundColor: "#ddd",
-    cursor: "pointer"
-  }
-};
-  
