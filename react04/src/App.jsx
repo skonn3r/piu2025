@@ -55,8 +55,11 @@ export default function App() {
   });
 
   return (
+  <>
+    <div className="logo">
+      <h1>Lista de Tarefas 📅</h1>
+    </div>
     <div className="container">
-      <h2 className="title">📝 Lista de Tarefas</h2>
       <FormularioTarefa
         texto={texto}
         setTexto={setTexto}
@@ -67,9 +70,10 @@ export default function App() {
       <ListaTarefas
         tarefas={tarefasFiltradas}
         mudarStatus={mudarStatus}
-        mover={mover}
         excluirSelecionadas={excluirSelecionadas}
+        mover={mover}
       />
     </div>
+    </>
   );
 }

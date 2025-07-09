@@ -8,7 +8,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-  html, body {
+html, body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -18,87 +18,175 @@
   justify-content: center;
   background-color: #f8f8f8;
 }
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    background: white;
-    color: black;
-  }
-  
-  .button {
-    padding: 10px 15px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .button-red {
-    background-color: #e74c3c;
-  }
-  
-  .lista {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .item {
-    background-color: rgb(250, 242, 229);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .texto {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .botoes {
-    margin-bottom: 0px;
-    display: flex;
-    gap: 8px;
-    background-color: rgb(250, 242, 229);
-  }
-  
-  .btn-realizado {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: green;
-    cursor: pointer;
-  }
-  
-  .btn-nao-realizado {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: #e74c3c;
-    cursor: pointer;
-  }
 
-  .btn-pendente {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(211, 112, 0);
-    cursor: pointer;
-  }
+.form {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00568f;
+  transition: all 0.3s ease;
+}
+
+.button-red {
+  background-color: #e74c3c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lista {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin-top: 20px;
+  position: relative;
+  padding: 20px;
+  padding-top: 35px; 
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f7ede2    ;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-topo-direita {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  background-color: gray;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.texto {
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.btn-realizado,
+.btn-nao-realizado,
+.btn-pendente {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-realizado {
+  background-color: rgb(0, 170, 0);
+  transition: all 0.3s ease;
+}
+
+.btn-nao-realizado {
+  background-color: #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.btn-pendente {
+  background-color: rgb(211, 112, 0);
+  transition: all 0.3s ease;
+}
+
+.btn-realizado:hover {
+  background-color: #087500;
+  transition: all 0.3s ease;
+}
+
+.btn-nao-realizado:hover {
+  background-color: #c50a07;
+  transition: all 0.3s ease;
+}
+
+.btn-pendente:hover {
+  background-color: #a36b01;
+  transition: all 0.3s ease;
+}
+
+.button-red:hover {
+  background-color: #c50a07;
+  transition: all 0.3s ease;
+}
+
+.btn-up {
+  background-color: rgb(80, 80, 80);
+  transition: all 0.3s ease;
+}
+
+.btn-up:hover {
+  background-color: rgb(49, 49, 49);
+  transition: all 0.3s ease;
+}
+
+.btn-down{
+  background-color: rgb(80, 80, 80);
+  transition: all 0.3s ease;
+}
+
+.btn-down:hover {
+  background-color: rgb(49, 49, 49);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  background-color: #3498db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: white;
+  margin: 0;
+}
