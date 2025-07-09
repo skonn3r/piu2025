@@ -16,7 +16,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: #dfecff;
 }
 
 .form {
@@ -72,7 +72,7 @@ html, body {
   padding-top: 35px; 
   border-radius: 5px;
   margin-bottom: 10px;
-  background-color: #f7ede2    ;
+  background-color: #dfecff    ;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -85,9 +85,6 @@ html, body {
   right: 10px;
   width: 20px;
   height: 20px;
-  border: 2px solid gray;
-  border-radius: 10px;
-  background-color: gray;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -181,6 +178,7 @@ html, body {
   width: 100%;
   padding: 10px 15px;
   border-radius: 5px;
+  margin-top: 30px;
   margin-bottom: 30px;
   background-color: #3498db;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
