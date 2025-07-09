@@ -9,14 +9,13 @@
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  padding-top: 30px;
+  width: 100%;
   background-color: #dfecff;
+  display: block;
 }
 
 .form {
@@ -186,5 +185,4 @@ html, body {
 
 h1 {
   color: white;
-  margin: 0;
 }
